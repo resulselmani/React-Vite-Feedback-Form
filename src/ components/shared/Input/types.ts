@@ -1,5 +1,4 @@
 import { InputHTMLAttributes } from "react"
-import { FieldValues,  UseFormRegister } from "react-hook-form";
 
 export type Props = {
     type: "number" | "text" |"email" | "textarea";
