@@ -10,8 +10,8 @@ const Input = ({
   validationSchema,
   name,
   errorMessage = "",
-  min = 1,
-  max = 5,
+  min,
+  max,
 }: InputProps): JSX.Element => {
   return (
     <div>
