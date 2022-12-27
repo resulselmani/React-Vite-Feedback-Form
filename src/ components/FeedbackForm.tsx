@@ -23,7 +23,7 @@ const FeedbackForm = () => {
     resolver: yupResolver(validationSchema),
   });
 
-  const inputClassnames = "p-4 my-2 border rounded-lg";
+  const inputClassnames = "p-4 my-2 border w-full rounded-lg";
 
   const downloadData = (data: any, fileName: any) => {
     var dataStr =
@@ -73,6 +73,8 @@ const FeedbackForm = () => {
           type={"number"}
           placeholder={"rating"}
           required={true}
+          min={1}
+          max={5}
           className={inputClassnames}
           register={register}
           name={"rating"}

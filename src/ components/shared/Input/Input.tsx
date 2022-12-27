@@ -10,6 +10,8 @@ const Input = ({
   validationSchema,
   name,
   errorMessage = "",
+  min = 1,
+  max = 5,
 }: InputProps): JSX.Element => {
   return (
     <div>
@@ -26,6 +28,8 @@ const Input = ({
           placeholder={placeholder}
           className={className}
           {...register(name, validationSchema)}
+          min={type === "number" && min}
+          max={type === "number" && max}
         />
       )}
       {errorMessage && <p className="text-red-600">{`${errorMessage}`}</p>}
