@@ -1,5 +1,6 @@
 import React from "react";
 import { InputProps } from "./types";
+import { useFormContext } from "react-hook-form";
 
 const Input = ({
   type,
@@ -10,9 +11,9 @@ const Input = ({
   validationSchema,
   name,
   errorMessage = "",
-  min,
-  max,
-}: InputProps): JSX.Element => {
+  min = 0,
+  max = 0,
+} : InputProps): JSX.Element => {
   return (
     <div>
       {type === "textarea" ? (
@@ -28,8 +29,8 @@ const Input = ({
           placeholder={placeholder}
           className={className}
           {...register(name, validationSchema)}
-          min={type === "number" && min}
-          max={type === "number" && max}
+          min={min}
+          max={max}
         />
       )}
       {errorMessage && <p className="text-red-600">{`${errorMessage}`}</p>}
